@@ -1,29 +1,49 @@
 using System;
+using System.Security.Cryptography;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("Enter number: ");
-        string valueFromUser = Console.ReadLine();
+        Console.Write("what is your grade percentage? ");
+        string response = Console.ReadLine();
+        int percent = int.Parse(response);
 
-        int x =int.Parse(valueFromUser);
-        int y = 2;
+        string letter="";
+        
 
-        if (x>y)
+        if (percent >= 90)
         
         {
-            Console.WriteLine("Greater");
+            letter="A";
         }
-        else if (x<y)
+        else if (percent >= 80)
         {
-            Console.WriteLine("less");
+            letter= "B";
 
+        }
+        else if (percent >=70)
+        {
+            letter ="C";
+        }
+        else if (percent>=60)
+        {
+            letter ="D";
+        
         }
         else
         {
-            Console.WriteLine("equal");
-        
+            letter = "F";
+        }
+        Console.WriteLine($"your grade is :{letter}");
+
+        if (percent>=70)
+        {
+            Console.WriteLine("you definitely passed!");
+        }
+        else
+        {
+            Console.WriteLine ("do better next time!");
         }
     }
 }
